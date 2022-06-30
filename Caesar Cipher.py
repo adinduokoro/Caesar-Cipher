@@ -1,11 +1,16 @@
-def converter(alphabet):
+def converter():
     position = alphabet.find(character)
     new_position = (position + key) % 26
     new_character = alphabet[new_position]
     return new_character
 
 
-alphabet = "abcdefghijklmnopqrstuvwxyz"
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+while True:
+    response = input("Do you want to Encrypt or Decrypt: ").upper()
+    if response == "E" or response == "D":
+        break
 
 user_message = input("Enter your secret message: ")  # Get the message from the user
 key = int(input("What is the key: "))  # Get the key from the user
@@ -15,12 +20,12 @@ for character in user_message:
     if character.isupper():
         character = character.lower()
         if character in alphabet:
-            converter(alphabet)
-            secret_message += converter(alphabet).upper()
+            converter()
+            secret_message += converter().upper()
     elif character.islower():
         if character in alphabet:
-            converter(alphabet)
-            secret_message += converter(alphabet)
+            converter()
+            secret_message += converter()
     else:
         secret_message += character
 print(secret_message)
