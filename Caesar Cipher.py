@@ -11,8 +11,8 @@ def converter():  # This function will either use a encrypt or decrypt formula
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
-while True:  # Ask the user if they want to encrypt or decrypt
-    response = input("Do you want to (E)ncrypt or (D)ecrypt: ").upper()
+# Ask the user if they want to encrypt or decrypt
+while response := input("Do you want to (E)ncrypt or (D)ecrypt: ").upper():
     if response == "E" or response == "D":
         break
 
